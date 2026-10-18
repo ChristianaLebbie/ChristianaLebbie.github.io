@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christiana Lebbie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Christiana Lebbie: data analyst, ICT engineer and cybersecurity advocate from Sierra Leone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column, left-aligned; experience shown as a dated log; colours drawn from the Sierra Leone flag (green, white, blue) used sparingly */
+:root{
+  --bg:#f5f7f9; --surface:#ffffff; --fg:#14202b; --muted:#56636f; --line:#d9e0e6;
+  --blue:#0a5fa8; --green:#17803a; --tint:#e7f0f8;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e161d; --surface:#15212b; --fg:#e8eef3; --muted:#9aa9b5; --line:#263642;
+  --blue:#5aa7e8; --green:#4cc174; --tint:#18293a; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#0e161d; --surface:#15212b; --fg:#e8eef3; --muted:#9aa9b5; --line:#263642;
+  --blue:#5aa7e8; --green:#4cc174; --tint:#18293a; color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));}
+a{color:var(--blue);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:860px;margin:0 auto}
+
+.flag{display:flex;height:6px;margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px)))}
+.flag span{flex:1}.flag span:nth-child(1){background:#1eb53a}.flag span:nth-child(2){background:var(--surface)}.flag span:nth-child(3){background:#0072c6}
+
+nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-block:20px;border-bottom:1px solid var(--line)}
+nav .mark{font-family:var(--mono);font-size:14px;color:var(--muted)}
+nav ul{display:flex;flex-wrap:wrap;gap:4px 20px;list-style:none;margin:0;padding:0}
+nav a{color:var(--fg);text-decoration:none;font-size:15px}
+nav a:hover{color:var(--blue)}
+
+header.hero{padding-block:56px 48px;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:40px;align-items:center}
+.hero-text{display:grid;gap:20px;min-width:0}
+.portrait{width:100%;max-width:100%;aspect-ratio:5/6;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:10px 10px 0 var(--tint)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,7vw,68px);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.lede{font-size:20px;color:var(--muted);max-width:60ch;margin:0}
+.lede strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font:600 15px var(--body);text-decoration:none;border:1px solid var(--line);color:var(--fg);background:var(--surface);cursor:pointer}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn:hover{border-color:var(--blue)}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:24px}
+.facts div{background:var(--surface);padding:16px 18px}
+.facts dt{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.facts dd{margin:4px 0 0;font-weight:600}
+
+section{padding-block:48px;border-top:1px solid var(--line)}
+section > h2{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.01em;margin:0 0 24px;display:flex;align-items:baseline;gap:12px}
+section > h2 .tag{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--muted)}
+p{max-width:65ch;margin:0 0 14px}
+
+.log{list-style:none;margin:0;padding:0;display:grid;gap:28px}
+.log li{display:grid;grid-template-columns:150px 1fr;gap:6px 24px}
+.log time{font-family:var(--mono);font-size:14px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.log h3{font-family:var(--display);font-size:21px;font-weight:700;margin:0;line-height:1.25}
+.log .org{color:var(--blue);font-weight:500;margin:2px 0 8px}
+.log p{color:var(--muted);margin:0}
+.points{margin:8px 0 0;padding-left:20px;color:var(--muted);display:grid;gap:4px}
+.log > li > div{min-width:0}
+.badge{display:inline-block;font-family:var(--mono);font-size:12px;padding:2px 8px;border-radius:999px;background:var(--tint);color:var(--blue);margin-left:6px;vertical-align:2px}
+
+.certs{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.certs li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;border:1px solid var(--line);border-radius:10px;padding:18px 22px;background:var(--surface)}
+.certs li > div{min-width:0}
+.certs h3{font-family:var(--display);font-size:20px;margin:0}
+.certs .org{color:var(--muted);font-family:var(--mono);font-size:14px;margin-top:4px}
+.feature{background:var(--tint);border-radius:12px;padding:28px;display:grid;gap:10px}
+.feature h3{font-family:var(--display);font-size:24px;margin:0}
+.feature ul{margin:4px 0 0;padding-left:20px;color:var(--fg)}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.project{border:1px solid var(--line);border-radius:10px;padding:22px;background:var(--surface);display:flex;flex-direction:column;gap:8px;min-width:0}
+.project .kind{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.project h3{font-family:var(--display);font-size:20px;margin:0;line-height:1.25}
+.project p{color:var(--muted);font-size:16px;margin:0}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.skills h3{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:500}
+.skills ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.skills li{padding-left:16px;position:relative}
+.skills li::before{content:"";position:absolute;left:0;top:.7em;width:7px;height:7px;border-radius:2px;background:var(--blue)}
+.skills .learning li::before{background:transparent;border:1.5px solid var(--green)}
+
+.contact{display:grid;gap:16px}
+.email{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.email code{font-family:var(--mono);font-size:18px;background:var(--surface);border:1px solid var(--line);padding:10px 14px;border-radius:8px;user-select:all;word-break:break-all}
+#copy-status{font-size:14px;color:var(--green);min-height:1.2em}
+
+footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:14px;color:var(--muted);font-family:var(--mono)}
+
+@media (max-width:620px){
+  .log li{grid-template-columns:1fr}
+  header.hero{padding-block:32px 32px;grid-template-columns:1fr;gap:24px}
+  .portrait{width:200px;order:-1}
+  .lede{font-size:18px}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:border-color .15s}}
+</style>
+
+</head>
+<body>
+<div class="flag" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="wrap">
+  <nav aria-label="Main">
+    <span class="mark">christiana@portfolio:~$</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-text">
+    <span class="eyebrow">Web design · Data · Cybersecurity</span>
+    <h1>Christiana Lebbie</h1>
+    <p class="lede">I spent four years turning raw data into decisions in public health and mining in Sierra Leone. Now I'm finishing an <strong>M.Sc. in Information and Communication Engineering</strong> in China and building a career in <strong>cybersecurity</strong>, with a focus on keeping women and young people safe online. I also design and build secure websites for businesses and organisations.</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact">Get in touch</a>
+      <a class="btn" href="https://www.linkedin.com/in/christiana-ama-lebbie-346918207/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/ChristianaLebbie" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    </div>
+    <img class="portrait" src="photo.jpg" alt="Portrait of Christiana Lebbie" width="640" height="768">
+  </header>
+
+  <dl class="facts">
+    <div><dt>Based in</dt><dd>Wuhan, China · Sierra Leone</dd></div>
+    <div><dt>Studying</dt><dd>M.Sc. ICE, HUST (2027)</dd></div>
+    <div><dt>Experience</dt><dd>4+ years in data roles</dd></div>
+    <div><dt>Community</dt><dd>President, WiCyS Sierra Leone</dd></div>
+  </dl>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I started out in computer science and moved into data work, first in child health surveillance and then in the mining sector. That work taught me how much depends on data being accurate, available and protected.</p>
+    <p>Security became the natural next step. In 2025 I helped launch the Women in Cybersecurity (WiCyS) Sierra Leone chapter after seeing how often girls in my country were targeted through social media, and I now lead it as President. Through the chapter I run online trainings and one-on-one sessions on staying safe online.</p>
+    <p>My graduate research looks at IoT systems and machine learning for predictive maintenance, a topic that grew directly out of my maintenance data work at Marampa Mine. I'm looking for roles and opportunities in security operations, data protection and applied security research.</p>
+  </section>
+
+  <section id="services">
+    <h2>Web design services</h2>
+    <p>I design and build websites for businesses, organisations and individuals. Because of my background in cybersecurity, every site I make is built with security in mind from the start.</p>
+    <div class="projects">
+      <article class="project">
+        <span class="kind">Businesses and organisations</span>
+        <h3>Websites that work on every phone</h3>
+        <p>Clean, fast sites for small businesses, schools, churches and NGOs, so people can find you, learn what you do and contact you.</p>
+      </article>
+      <article class="project">
+        <span class="kind">Professionals and students</span>
+        <h3>Personal portfolio sites</h3>
+        <p>A single link that shows your experience, projects and skills, ready to share with employers, scholarship panels and clients.</p>
+      </article>
+      <article class="project">
+        <span class="kind">Security built in</span>
+        <h3>Safe from day one</h3>
+        <p>HTTPS on every site, contact forms that don't expose your email to spammers, and protection against the most common web attacks.</p>
+      </article>
+    </div>
+    <div class="cta" style="margin-top:24px"><a class="btn primary" href="#contact">Ask about a website</a></div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ol class="log">
+      <li>
+        <time>Jul – Aug 2026</time>
+        <div>
+          <h3>Volunteer <span class="badge">Cybersecurity</span></h3>
+          <div class="org">National Cybersecurity Coordination Centre, Sierra Leone</div>
+          <p>One-month volunteer placement supporting the national centre responsible for coordinating Sierra Leone's cybersecurity efforts.</p>
+        </div>
+      </li>
+      <li>
+        <time>2023 – 2025</time>
+        <div>
+          <h3>Data Analyst</h3>
+          <div class="org">Marampa Mine, Sierra Leone</div>
+          <p>Worked on the mine's data systems across operations and maintenance.</p>
+          <ul class="points">
+            <li>Helped build a fleet management system to track the mine's vehicles and equipment</li>
+            <li>Managed maintenance data in the computerised maintenance management system (CMMS)</li>
+            <li>Analysed operational and maintenance data and produced reports for decision-making</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <time>2021 – 2023</time>
+        <div>
+          <h3>Data Officer</h3>
+          <div class="org">CHAMPS (Child Health and Mortality Prevention Surveillance), Data and Informatics</div>
+          <p>Managed surveillance data for a global child health programme, with a focus on data quality and the careful handling of sensitive health records.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ol class="log">
+      <li>
+        <time>Expected 2027</time>
+        <div>
+          <h3>M.Sc. Information and Communication Engineering</h3>
+          <div class="org">Huazhong University of Science and Technology (HUST), Wuhan, China</div>
+          <p>Coursework in artificial intelligence. Research on IoT-based predictive maintenance. Expected graduation June 2027.</p>
+        </div>
+      </li>
+      <li>
+        <time>2018 – 2023</time>
+        <div>
+          <h3>B.Sc. Computer Science <span class="badge">Division One</span></h3>
+          <div class="org">University of Makeni (UNIMAK), Sierra Leone</div>
+          <p>Graduated with Division One, the highest classification, with a final grade point of 4.31 out of 5.00. Relevant courses included Computer Network Security, Data Communication and Networking, Routing and Switching, Software Engineering, Artificial Intelligence, Relational Databases, Data Mining and Warehousing, and Web Programming.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul class="certs">
+      <li>
+        <div>
+          <h3>Master Microsoft Power BI</h3>
+          <div class="org">Alison · May 2025 · Score 90%</div>
+        </div>
+        <a class="btn" href="https://alison.com/certification/check/80b703116e" target="_blank" rel="noopener">Verify certificate</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="leadership">
+    <h2>Leadership</h2>
+    <div class="feature">
+      <span class="eyebrow">Founding Secretary, June 2025 · Now President</span>
+      <h3>President, WiCyS Sierra Leone</h3>
+      <p>I helped found the Sierra Leone chapter of Women in Cybersecurity after noticing how many girls were being targeted and harassed through social media. With support from WiCyS Global, the chapter works to build awareness among girls and young people about technology and how to protect themselves online.</p>
+      <ul>
+        <li>Planned and delivered online cybersecurity awareness trainings</li>
+        <li>Held one-on-one mentoring meetings with members</li>
+        <li>Helped set up the chapter as Founding Secretary before being elected to lead it</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects and research</h2>
+    <div class="projects">
+      <article class="project">
+        <span class="kind">Thesis research</span>
+        <h3>IoT-based predictive maintenance</h3>
+        <p>A multi-chapter survey of how IoT sensors and machine learning can predict equipment failures before they happen. Written in LaTeX with a fully verified bibliography.</p>
+      </article>
+      <article class="project">
+        <span class="kind">Research survey</span>
+        <h3>IoT for health monitoring</h3>
+        <p>A ten-chapter survey covering IoT health monitoring, COVID-19 applications, machine learning, edge computing and data privacy, with original diagrams and comparison tables.</p>
+      </article>
+      <article class="project">
+        <span class="kind">Project management</span>
+        <h3>Plan for a voice conversation AI system</h3>
+        <p>A full project management plan for building a large interactive voice model, including schedule, risk register and resource planning.</p>
+      </article>
+      <article class="project">
+        <span class="kind">Web</span>
+        <h3>This website</h3>
+        <p>Designed and built by hand with HTML, CSS and JavaScript. New projects will be added here as I build them.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div>
+        <h3>Data</h3>
+        <ul>
+          <li>Data collection and cleaning</li>
+          <li>Data analysis and reporting</li>
+          <li>Power BI dashboards</li>
+          <li>Data quality management</li>
+          <li>Handling sensitive health data</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Development</h3>
+        <ul>
+          <li>Python</li>
+          <li>HTML and CSS</li>
+          <li>Responsive web design</li>
+          <li>JavaScript</li>
+          <li>AWS cloud fundamentals</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Security</h3>
+        <ul>
+          <li>Security awareness training</li>
+          <li>Social media and account safety</li>
+          <li>Data privacy principles</li>
+          <li>Web application security (OWASP Top 10)</li>
+          <li>Linux and networking fundamentals</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Research and writing</h3>
+        <ul>
+          <li>Literature surveys</li>
+          <li>LaTeX and Overleaf</li>
+          <li>IoT, machine learning, edge computing</li>
+        </ul>
+      </div>
+      <div class="learning">
+        <h3>Currently learning</h3>
+        <ul>
+          <li>CompTIA Security+</li>
+          <li>Security monitoring with Splunk (SIEM)</li>
+          <li>Cloud security on AWS</li>
+          <li>Python for security automation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>I'm open to cybersecurity and data roles, research collaborations, speaking about online safety, and building websites for organisations.</p>
+      <div class="email">
+        <code id="email-text">clebbie27@gmail.com</code>
+        <button class="btn" id="copy-btn" type="button">Copy email</button>
+      </div>
+      <span id="copy-status" role="status"></span>
+      <div class="cta">
+        <a class="btn" href="https://www.linkedin.com/in/christiana-ama-lebbie-346918207/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/ChristianaLebbie" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Christiana Lebbie · Built by hand in Wuhan</footer>
+</div>
+
+<script>
+document.getElementById('copy-btn').addEventListener('click', function(){
+  var text = document.getElementById('email-text').textContent;
+  var status = document.getElementById('copy-status');
+  function fallback(){
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('email-text'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    status.textContent = 'Email selected. Press Ctrl+C to copy.';
+  }
+  try {
+    navigator.clipboard.writeText(text).then(function(){ status.textContent = 'Copied'; }, fallback);
+  } catch(e){ fallback(); }
+});
+</script>
+
+</body>
+</html>
